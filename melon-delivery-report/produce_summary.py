@@ -1,43 +1,30 @@
-print("Day 1")
-the_file = open("um-deliveries-20140519.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+#Function defintion 
+def delivery_report(day, file_path):
+    """ Returns a delivery report for the given day(s) and file(s) """
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+    # Prints the day that is passed in 
+    print(day)
+    # Opens the file that is passed in
+    the_file = open(file_path)
 
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
+    for line in the_file:
 
+        # Removes whitespace at end of string
+        line = line.rstrip()
+        
+        # Will split the line at the specified separator 
+        words = line.split('|')
+       
+        # Returns the given indexes
+        melon = words[0]
+        count = words[1]
+        amount = words[2]
 
-print("Day 2")
-the_file = open("um-deliveries-20140520.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+        # Prints the message based on the variables detailed above
+        print(f"Delivered {count} {melon}s for total of ${amount}")
+    the_file.close()
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
-
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
-
-
-print("Day 3")
-the_file = open("um-deliveries-20140521.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
-
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
-
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
+# Returns report based on arguments that are passed in
+delivery_report("Day 1", "um-deliveries-20140519.txt")
+delivery_report("Day 2", "um-deliveries-20140520.txt")
+delivery_report("Day 3", "um-deliveries-20140521.txt")
