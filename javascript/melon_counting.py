@@ -28,4 +28,3 @@ def count_melons(melon_list):
 
     return melon_counts
 
-print(count_melons(melons_to_add))
