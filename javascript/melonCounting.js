@@ -1,7 +1,7 @@
 
-# Our customers are going to buy lots of melons!
+// Our customers are going to buy lots of melons!
 
-melons_to_add = ['Ogen', 'Horned Melon', 'Watermelon', 'Casaba',
+melonsToAdd = ['Ogen', 'Horned Melon', 'Watermelon', 'Casaba',
                  'Sharlyn', 'Xigua', 'Ogen', 'Christmas', 'Christmas',
                  'Christmas', 'Christmas', 'Watermelon', 'Sharlyn', 'Xigua',
                  'Cantaloupe', 'Christmas', 'Watermelon', 'Christmas',
@@ -13,19 +13,18 @@ melons_to_add = ['Ogen', 'Horned Melon', 'Watermelon', 'Casaba',
                  'Watermelon', 'Cantaloupe', 'Casaba', 'Cantaloupe', 'Casaba',
                  'Watermelon', 'Santa Claus', 'Casaba']
 
+function countMelons(melonList) {
+    
+    const melonCounts = {}
 
-def count_melons(melon_list):
-    """Take in a list and return a dictionary of # of melons by melon type."""
+    for (const melon of melonList) {
+        if (melon in melonCounts) {
+            melonCounts[melon] += 1;
+        } else {
+            melonCounts[melon] = 1;
+        }
+    }
+    return melonCounts;
+}
 
-    melon_counts = {}
-
-    for melon in melon_list:
-        if melon in melon_counts:
-            melon_counts[melon] = melon_counts[melon] + 1
-
-        else:
-            melon_counts[melon] = 1
-
-    return melon_counts
-
-print(count_melons(melons_to_add))
+// console.log(countMelons(melonsToAdd))
